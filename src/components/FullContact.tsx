@@ -8,7 +8,6 @@ import {
   UserCheck,
   Phone,
   MapPin,
-  Target,
   TrendingUp,
   Award,
   Users2,
