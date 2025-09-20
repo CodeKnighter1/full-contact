@@ -217,7 +217,7 @@ const FullContact: React.FC = () => {
       },
       { 
         src: m8, 
-        width: 'w-[130px] sm:w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px]', 
+        width: 'w-[170px] sm:w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px]', 
         alt: 'Klasik do\'kon' 
       },
       { 
