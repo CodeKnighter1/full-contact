@@ -395,47 +395,6 @@ const FullContact: React.FC = () => {
                 </div>
               </div>
 
-              {/* <div className="p-4 sm:p-6 md:p-8">
-                <div className="text-center">
-                  <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-6">
-                    Topshirilgan mahsulotlar
-                  </h1>
-                </div>
-                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3'>
-                  <video
-                    width="360"
-                    height="250"
-                    controls
-                    src="/videos/vedio1.mp4"
-                    className="max-w-full rounded-xl"
-                  />
-
-                  <video
-                    width="100%"
-                    height="250"
-                    controls
-                    src="/videos/finish_1.mp4"
-                    className="max-w-full rounded-xl"
-                  />
-
-                  <video
-                    width="100%"
-                    height="250"
-                    controls
-                    src="/videos/IMG_5477.MP4"
-                    className="max-w-full rounded-xl"
-                  />
-
-                  <video
-                    width="100%"
-                    height="250"
-                    controls
-                    src="/videos/vedio5.MP4"
-                    className="max-w-full rounded-xl"
-                  />
-                </div>
-              </div> */}
-
               <div className="mt-10 flex justify-center space-x-4">
                 <h1 className='text-xl font-medium text-gray-900'>Yetkazib berish</h1>
               </div>
