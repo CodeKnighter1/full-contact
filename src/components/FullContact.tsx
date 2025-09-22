@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import {
   CheckCircle,
@@ -8,9 +8,7 @@ import {
   UserCheck,
   Phone,
   MapPin,
-  TrendingUp,
   Award,
-  Users2,
   ArrowDownIcon
 } from 'lucide-react';
 import ques from '@/images/icons8-question-48.png';
@@ -34,6 +32,14 @@ import m8 from '@/images/mahsulot/image copy 11.png'
 import m9 from '@/images/mahsulot/image copy.png'
 import m10 from '@/images/mahsulot/image.png'
 import Carousel from './Carousel';
+import cofee from '@/images/Hamkorlarimiz/cofelitto.png'
+import maxw from '@/images/Hamkorlarimiz/maxw.png'
+import vedio1 from '@/images/Vedios/vedio1.mp4';
+import vedio2 from '@/images/Vedios/finish_1.mp4'
+import vedio3 from '@/images/Vedios/IMG_5477.MP4'
+import vedio4 from '@/images/Vedios/vedio5.MP4';
+
+
 
 
 // Key Features Data
@@ -171,82 +177,118 @@ const createAnimationVariants = (prefersReducedMotion: boolean): AnimationVarian
 const FullContact: React.FC = () => {
   const prefersReducedMotion = !!useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
-  // const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const variants = useMemo(() => createAnimationVariants(prefersReducedMotion), [prefersReducedMotion]);
+  const carouselRef = useRef(null);
+  const animationRef = useRef(null);
+
+
+
+  const partners = [
+    index, // O'rnini rasmlar bilan almashtiring
+    xalq,
+    huquq,
+    cofee,
+    maxw,
+  ];
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    let scrollPosition = 0;
+    const scrollSpeed = 1; // Harakat tezligi (px/so'z)
+    const itemWidth = 120; // Har bir rasmning kengligi (mobil uchun 120px)
+
+    const animate = () => {
+      scrollPosition -= scrollSpeed;
+      if (scrollPosition <= -itemWidth) {
+        scrollPosition += itemWidth;
+        carousel.appendChild(carousel.firstChild); // Cheksiz aylanish uchun oxiriga qo'shish
+      }
+      carousel.style.transform = `translateX(${scrollPosition}px)`;
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, []);
 
   const rows = [
     // Birinchi qator - chapga (barcha rasmlar bir xil height)
     [
-      { 
-        src: m1, 
-        width: 'w-[120px] sm:w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px]', 
-        alt: 'Kichik do\'kon' 
+      {
+        src: m1,
+        width: 'w-[120px] sm:w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px]',
+        alt: 'Kichik do\'kon'
       },
-      { 
-        src: m2, 
-        width: 'w-[210px] sm:w-[220px] md:w-[240px] lg:w-[260px] xl:w-[280px]', 
-        alt: 'Katta do\'kon' 
+      {
+        src: m2,
+        width: 'w-[210px] sm:w-[220px] md:w-[240px] lg:w-[260px] xl:w-[280px]',
+        alt: 'Katta do\'kon'
       },
-      { 
-        src: m3, 
-        width: 'w-[200px] sm:w-[170px] md:w-[190px] lg:w-[210px] xl:w-[230px]', 
-        alt: 'O\'rta do\'kon' 
+      {
+        src: m3,
+        width: 'w-[200px] sm:w-[170px] md:w-[190px] lg:w-[210px] xl:w-[230px]',
+        alt: 'O\'rta do\'kon'
       },
-      { 
-        src: m4, 
-        width: 'w-[200px] sm:w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px]', 
-        alt: 'Keng do\'kon' 
+      {
+        src: m4,
+        width: 'w-[200px] sm:w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px]',
+        alt: 'Keng do\'kon'
       },
-      { 
-        src: m5, 
-        width: 'w-[120px] sm:w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px]', 
-        alt: 'Tor do\'kon' 
+      {
+        src: m5,
+        width: 'w-[120px] sm:w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px]',
+        alt: 'Tor do\'kon'
       }
     ],
     // Ikkinchi qator - o'ngga (barcha rasmlar bir xil height)
     [
-      { 
-        src: m6, 
-        width: 'w-[130px] sm:w-[150px] md:w-[170px] lg:w-[190px] xl:w-[210px]', 
-        alt: 'Modern do\'kon' 
+      {
+        src: m6,
+        width: 'w-[130px] sm:w-[150px] md:w-[170px] lg:w-[190px] xl:w-[210px]',
+        alt: 'Modern do\'kon'
       },
-      { 
-        src: m7, 
-        width: 'w-[150px] sm:w-[170px] md:w-[190px] lg:w-[210px] xl:w-[230px]', 
-        alt: 'Zamonaviy do\'kon' 
+      {
+        src: m7,
+        width: 'w-[150px] sm:w-[170px] md:w-[190px] lg:w-[210px] xl:w-[230px]',
+        alt: 'Zamonaviy do\'kon'
       },
-      { 
-        src: m8, 
-        width: 'w-[170px] sm:w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px]', 
-        alt: 'Klasik do\'kon' 
+      {
+        src: m8,
+        width: 'w-[170px] sm:w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px]',
+        alt: 'Klasik do\'kon'
       },
-      { 
-        src: m9, 
-        width: 'w-[180px] sm:w-[170px] md:w-[190px] lg:w-[210px] xl:w-[230px]', 
-        alt: 'Elegant do\'kon' 
+      {
+        src: m9,
+        width: 'w-[180px] sm:w-[170px] md:w-[190px] lg:w-[210px] xl:w-[230px]',
+        alt: 'Elegant do\'kon'
       }
     ],
     // Uchinchi qator - chapga (barcha rasmlar bir xil height)
     [
-      { 
-        src: m10, 
-        width: 'w-[120px] sm:w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px]', 
-        alt: 'Kompakt do\'kon' 
+      {
+        src: m10,
+        width: 'w-[120px] sm:w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px]',
+        alt: 'Kompakt do\'kon'
       },
-      { 
-        src: m1, 
-        width: 'w-[120px] sm:w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px]', 
-        alt: 'Mini do\'kon' 
+      {
+        src: m1,
+        width: 'w-[120px] sm:w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px]',
+        alt: 'Mini do\'kon'
       },
-      { 
-        src: m2, 
-        width: 'w-[200px] sm:w-[220px] md:w-[240px] lg:w-[260px] xl:w-[280px]', 
-        alt: 'Katta do\'kon' 
+      {
+        src: m2,
+        width: 'w-[200px] sm:w-[220px] md:w-[240px] lg:w-[260px] xl:w-[280px]',
+        alt: 'Katta do\'kon'
       },
-      { 
-        src: m3, 
-        width: 'w-[150px] sm:w-[170px] md:w-[190px] lg:w-[210px] xl:w-[230px]', 
-        alt: 'O\'rta do\'kon' 
+      {
+        src: m3,
+        width: 'w-[150px] sm:w-[170px] md:w-[190px] lg:w-[210px] xl:w-[230px]',
+        alt: 'O\'rta do\'kon'
       }
     ]
   ]
@@ -300,16 +342,6 @@ const FullContact: React.FC = () => {
           >
             Mijoz uchun sifat, biz uchun mas'uliyat!
           </motion.p>
-          <motion.p
-            className="mt-4"
-            initial={variants.fadeInUp.initial}
-            animate={variants.fadeInUp.animate}
-            transition={{ delay: 0.4, ...variants.fadeInUp.transition }}
-          >
-            <span className="text-base md:text-base text-gray-900 mt-4 block">
-              O'zbekistondagi birinchi ochilgan va birinchi raqamli ko'chma do'konlar fabrikasi
-            </span>
-          </motion.p>
         </motion.div>
 
         {/* Main Content */}
@@ -335,29 +367,94 @@ const FullContact: React.FC = () => {
                   <Carousel rows={rows} baseDuration={30} pauseOnHover={true} />
                 </div>
 
-                <div>
-                  <div>
-                    <h1 className='text-2xl'>BIZNING HAMKORLARIMIZ</h1>
+                <div className="p-4 sm:p-6 md:p-8">
+                  <div className="text-center">
+                    <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-6">
+                      BIZNING HAMKORLARIMIZ
+                    </h1>
                   </div>
-                  <div className='flex items-center justify-between mt-5 bg-gray-50 rounded-lg shadow-2xl px-4 py-4'>
-                    <img src={index} alt="partner" className='w-[100px] rounded-lg' />
-                    <img src={xalq} alt="partner" className='w-[100px] rounded-lg' />
-                    <img src={huquq} alt="partner" className='w-[100px] rounded-lg' />
+                  <div className="overflow-hidden bg-gray-50 rounded-lg shadow-2xl py-4">
+                    <div
+                      ref={carouselRef}
+                      className="flex items-center gap-4 whitespace-nowrap"
+                      style={{ minWidth: 'max-content' }}
+                    >
+                      {partners.concat(partners).map((partner, index) => (
+                        <img
+                          key={index}
+                          src={partner}
+                          alt={`partner-${index}`}
+                          className="w-[100px] sm:w-[120px] md:w-[150px] rounded-lg object-contain inline-block"
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
+              </div>
 
+              <div className="p-4 sm:p-6 md:p-8">
+                <div className="text-center">
+                  <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+                    Topshirilgan mahsulotlar
+                  </h1>
+                </div>
+                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3'>
+                  <iframe
+                    width="360"
+                    height="250"
+                    src={`${vedio1}?autoplay=0`}  // Autoplay o'chirilgan
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    className="max-w-full rounded-xl"
+                  ></iframe>
 
+                  <iframe
+                    width="100%"
+                    height="250"
+                    src={vedio2}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    className="max-w-full rounded-xl"
+                  ></iframe>
+
+                  <iframe
+                    width="100%"
+                    height="250"
+                    src={vedio3}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    className="max-w-ful rounded-xl"
+                  ></iframe>
+
+                  <iframe
+                    width="100%"
+                    height="250"
+                    src={vedio4}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    className="max-w-full rounded-xl"
+                  ></iframe>
+                </div>
               </div>
 
               <div className="mt-10 flex justify-center space-x-4">
-                <h1 className='text-xl font-medium text-gray-900'>Buyurtmangiz sizgacha ushbu jarayonlardan o‘tadi.</h1>
+                <h1 className='text-xl font-medium text-gray-900'>Yetkazib berish</h1>
               </div>
               <div className="grid md:grid-cols-3 gap-6 mt-6">
                 {[
-                  { icon: '📞', title: 'Birinchi bosqichda', desc: 'Bizning xush muomala menejirlarimiz sizdan buyurtmani qabul qilishadi.' },
-                  { icon: '📝', title: 'Ikkinchi bosqichda', desc: 'Sizning buyurtmangiz yo\'nalishi bo\'yicha o\'z ishining mutahasislari tomonidan yasaladi.' },
-                  { icon: '⚙️', title: 'Uchinchi bosqichda', desc: 'Qurib bitkazilgan mahsulot sifat nazoratidan o\'tkaziladi. Ushbu jarayon bizning fabrikamiz uchun muhim jarayon hisoblanadi!' },
-                  { icon: '🚚', title: 'To\'rtinchi bosqichda', desc: 'Sifat nazoratidan o\'tgan mahsulotingiz siz aytgan joyga yetkazib beriladi.' }
+                  { title: '', desc: 'Ko\'chma do\'kon respublika bo\'ylab yetkazish hamda o\'rnatib berishni taminlaydi. ' }
                 ].map((step, index) => (
                   <motion.div
                     key={index}
@@ -366,11 +463,62 @@ const FullContact: React.FC = () => {
                     animate={variants.fadeInUp.animate}
                     transition={{ delay: 0.1 * index, ...variants.fadeInUp.transition }}
                   >
-                    <div className="text-4xl mb-4">{step.icon}</div>
                     <h3 className="text-xl text-gray-900 font-bold mb-2">{step.title}</h3>
-                    <p className='text-base text-gray-900'>{step.desc}</p>
+                    <p className='text-[17px] md:text-2xl text-gray-900 leading-relaxed'>{step.desc}</p>
                   </motion.div>
                 ))}
+              </div>
+
+              <div className="p-4 sm:p-6 md:p-8">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">
+                  Ko'chma do'kon mahsulotlari
+                </h2>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+                  <ul className="list-disc pl-5 space-y-2">
+                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                      Ko'chma do'konlar
+                    </li>
+                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                      Savdo ofislari
+                    </li>
+                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                      Sotuv ofislari
+                    </li>
+                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                      Savdo va xizmat ko'rsatish bino inshoatlari
+                    </li>
+                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                      Aqlli-bekatlar
+                    </li>
+                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                      Sotuv ofislari
+                    </li>
+                  </ul>
+
+                  <ul className="list-disc pl-5 space-y-2">
+                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                      Bio-Tualetlar
+                    </li>
+                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                      Bankomatlar
+                    </li>
+                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                      Sartaroshxona
+                    </li>
+                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                      Modulli uylar
+                    </li>
+                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                      Kontainerdan uylar
+                    </li>
+                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                      Omborxonalar
+                    </li>
+                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                      Va turli inshoatlar
+                    </li>
+                  </ul>
+                </div>
               </div>
             </InfoCard>
           </motion.div>
@@ -628,7 +776,7 @@ const FullContact: React.FC = () => {
               <SectionHeader className='text-black'>
                 "QO'SHIMCHA" <br /> <span className="text-yellow-600 text-2xl">MA'LUMOTLAR</span>
               </SectionHeader>
-
+              {/* 
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 {[
                   { icon: TrendingUp, label: "Yillik o'sish", value: "15-20%" },
@@ -650,28 +798,32 @@ const FullContact: React.FC = () => {
                     </motion.div>
                   );
                 })}
-              </div>
+              </div> */}
 
-              <div className="space-y-4 text-gray-900 leading-relaxed">
-                <p>
-                  Bizning ishlab hiqarish kvadratimiz har kuni 20 kv, oyiga 610 kv va yiliga 7300 kv ishlab chiqaramiz.
-                </p>
-                <p>
-                  Viloyatlar miqiyosida 100 dan ko‘proq mutaxasislarimiz bor.
-                </p>
-                <p>
-                  Bizning mahsulotimizga talab Respublikamizda 2020-yillarda 12,000 dan ortiq bo'lgan
-                  va bu ko'rsatgich yildan yilga 15-20% oshib bormoqda.
-                </p>
-                <p>
-                  2025 yilga kelib 17,000 ga yaqin talab bo'ladi va bu ko'rsatgich statistikadan
-                  hisoblangan. Shundan bizning ko'chma do'konlar fabrikamiz bu yilgi rejasi
-                  800-1000 donani tashkil qiladi.
-                </p>
-                <p>
-                  Kuchimiz bemalol kuniga ikkita do'konni tayyor holga keltirishga yetadi.
-                </p>
-              </div>
+              <motion.div
+                className="space-y-6 text-slate-600 leading-relaxed"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                {[
+                  "Ko'chma do'konning ishlab chiqarish quvvatimiz har kuni 20 kv ya'ni 2 tagacha, oyiga 610 kv 50 tagacha va yiliga 7300 kv 600 dan ortiq tayyor mahsulot ishlab chiqamiz.",
+                  "Viloyatlar miqyosida 100 ga yaqin ustalar va 10 dan ortiq mutaxasislarimiz faoliyat yuritadi.",
+                  "Ko'chma do'konlar fabrikasi o'zbekistondagi birinchi va yagona fabrika hisoblanadi."
+                ].map((text, index) => (
+                  <motion.p
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="p-4 bg-white/50 rounded-lg border-l-4 border-red-200"
+                  >
+                    {text}
+                  </motion.p>
+                ))}
+              </motion.div>
             </InfoCard>
           </motion.div>
 
@@ -705,6 +857,23 @@ const FullContact: React.FC = () => {
                         <a href='tel:+99878 777 75 57' className='text-sm md:text-base font-medium'>+998 78 777 75 57</a>
                       </div>
 
+                      <div className='flex gap-2 items-center bg-gray-50 px-3 py-5 mt-3 rounded-lg'>
+                        <Phone className='text-teal-600' />
+                        <a href="tel:+998771047557" className='text-sm md:text-base font-medium'>+998 77 104 75 57</a>
+                      </div>
+
+                      <div className="flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+                        <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl text-center font-medium text-gray-800 mb-4">
+                          Savollaringizni telegram lichkada qoldiring va ko'chma do'kon siz bilan bog'lanadi.
+                        </h3>
+                        <a
+                          href="https://t.me/kochma_dokon_adminstratsiya"
+                          className="inline-block bg-teal-600 text-white font-semibold py-2 px-4 sm:px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm sm:text-base"
+                        >
+                          Telegram
+                        </a>
+                      </div>
+
                       <div className='flex gap-2 mt-4 items-center bg-gray-50 px-3 py-5 rounded-lg'>
                         <MapPin className='text-teal-600' />
                         <h3 className='text-sm md:text-base font-medium'>Toshkent shahar, Yangihayot tumani <br />
@@ -718,6 +887,27 @@ const FullContact: React.FC = () => {
               </div>
             </InfoCard>
           </motion.div>
+
+          {/* Footer */}
+          <motion.footer
+            className="py-12 text-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-red-600 to-slate-700 bg-clip-text text-transparent">
+                KO'CHMA DO'KON
+              </h3>
+              <p className="text-slate-600">
+                O'zbekistondagi eng ishonchli ko'chma do'konlar fabrikasi
+              </p>
+              <p className="text-sm text-slate-500">
+                © 2025 Kontainer City. Barcha huquqlar himoyalangan.
+              </p>
+            </div>
+          </motion.footer>
         </section>
       </div>
     </div>
