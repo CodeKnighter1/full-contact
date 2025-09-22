@@ -33,3 +33,9 @@ dist-ssr
 *.m4a
 *.wav
 *.mp3
+ 
+# If you want to track videos in Git, keep these unignored
+# (we serve from public/videos via <video src="/videos/...">)
+# public/videos/**
+# !public/videos/.keep
+# src/images/Vedios/**
