@@ -34,7 +34,7 @@ import m10 from '@/images/mahsulot/image.png'
 import Carousel from './Carousel';
 import cofee from '@/images/Hamkorlarimiz/cofelitto.png'
 import maxw from '@/images/Hamkorlarimiz/maxw.png'
-import vedio1 from '@/images/Vedios/vedio1.mp4';
+import vedio1 from '@/images/Vedios/vedio1.MP4';
 import vedio2 from '@/images/Vedios/finish_1.mp4'
 import vedio3 from '@/images/Vedios/IMG_5477.MP4'
 import vedio4 from '@/images/Vedios/vedio5.MP4';
