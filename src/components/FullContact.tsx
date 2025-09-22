@@ -34,10 +34,7 @@ import m10 from '@/images/mahsulot/image.png'
 import Carousel from './Carousel';
 import cofee from '@/images/Hamkorlarimiz/cofelitto.png'
 import maxw from '@/images/Hamkorlarimiz/maxw.png'
-import vedio1 from '@/images/Vedios/vedio1.MP4';
-import vedio2 from '@/images/Vedios/finish_1.mp4'
-import vedio3 from '@/images/Vedios/IMG_5477.MP4'
-import vedio4 from '@/images/Vedios/vedio5.MP4';
+// Videos are served from public/videos to avoid bundling/import issues
 
 
 
@@ -405,53 +402,37 @@ const FullContact: React.FC = () => {
                   </h1>
                 </div>
                 <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3'>
-                  <iframe
+                  <video
                     width="360"
                     height="250"
-                    src={`${vedio1}?autoplay=0`}  // Autoplay o'chirilgan
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
+                    controls
+                    src="/videos/vedio1.mp4"
                     className="max-w-full rounded-xl"
-                  ></iframe>
+                  />
 
-                  <iframe
+                  <video
                     width="100%"
                     height="250"
-                    src={vedio2}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
+                    controls
+                    src="/videos/finish_1.mp4"
                     className="max-w-full rounded-xl"
-                  ></iframe>
+                  />
 
-                  <iframe
+                  <video
                     width="100%"
                     height="250"
-                    src={vedio3}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                    className="max-w-ful rounded-xl"
-                  ></iframe>
+                    controls
+                    src="/videos/IMG_5477.MP4"
+                    className="max-w-full rounded-xl"
+                  />
 
-                  <iframe
+                  <video
                     width="100%"
                     height="250"
-                    src={vedio4}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
+                    controls
+                    src="/videos/vedio5.MP4"
                     className="max-w-full rounded-xl"
-                  ></iframe>
+                  />
                 </div>
               </div>
 

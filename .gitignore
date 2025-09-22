@@ -24,7 +24,6 @@ dist-ssr
 *.sw?
 
 
-*.mp4
 *.pdf
 *.docx
 *.xlsx
