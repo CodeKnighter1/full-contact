@@ -1,4 +1,4 @@
-import React, { type CSSProperties, useEffect, useMemo, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import {
   CheckCircle,
@@ -203,7 +203,8 @@ const FullContact: React.FC = () => {
         scrollPosition += itemWidth;
         carousel?.appendChild(carousel.firstChild as Node); // Cheksiz aylanish uchun oxiriga qo'shish
       }
-      carousel!.style.transform = `translateX(${scrollPosition}px)` as unknown as string as CSSProperties;
+      // Bu yerda optional chaining o'rniga to'g'ridan-to'g'ri ishlatish mumkin, chunki carousel null emas
+      carousel!.style.transform = `translateX(${scrollPosition}px)`;
       animationRef.current = requestAnimationFrame(animate);
     };
 
