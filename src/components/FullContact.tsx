@@ -198,13 +198,18 @@ const FullContact: React.FC = () => {
     const itemWidth = 120; // Har bir rasmning kengligi (mobil uchun 120px)
 
     const animate = () => {
+      if (!carousel) {
+        return;
+      }
       scrollPosition -= scrollSpeed;
       if (scrollPosition <= -itemWidth) {
         scrollPosition += itemWidth;
-        carousel?.appendChild(carousel.firstChild as Node); // Cheksiz aylanish uchun oxiriga qo'shish
+        if (carousel.firstChild) {
+          carousel.appendChild(carousel.firstChild as Node); // Cheksiz aylanish uchun oxiriga qo'shish
+        }
       }
       // Bu yerda optional chaining o'rniga to'g'ridan-to'g'ri ishlatish mumkin, chunki carousel null emas tushundingmi?
-      carousel!.style.transform = `translateX(${scrollPosition}px)`;
+      carousel.style.transform = `translateX(${scrollPosition}px)`;
       animationRef.current = requestAnimationFrame(animate);
     };
 
