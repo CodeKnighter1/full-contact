@@ -203,7 +203,7 @@ const FullContact: React.FC = () => {
         scrollPosition += itemWidth;
         carousel?.appendChild(carousel.firstChild as Node); // Cheksiz aylanish uchun oxiriga qo'shish
       }
-      // Bu yerda optional chaining o'rniga to'g'ridan-to'g'ri ishlatish mumkin, chunki carousel null emas
+      // Bu yerda optional chaining o'rniga to'g'ridan-to'g'ri ishlatish mumkin, chunki carousel null emas tushundingmi?
       carousel!.style.transform = `translateX(${scrollPosition}px)`;
       animationRef.current = requestAnimationFrame(animate);
     };
