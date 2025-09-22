@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { type CSSProperties, useEffect, useMemo, useRef } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import {
   CheckCircle,
@@ -178,8 +178,8 @@ const FullContact: React.FC = () => {
   const prefersReducedMotion = !!useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
   const variants = useMemo(() => createAnimationVariants(prefersReducedMotion), [prefersReducedMotion]);
-  const carouselRef = useRef(null);
-  const animationRef = useRef(null);
+  const carouselRef = useRef<HTMLDivElement>(null); // Div elementi uchun aniq tur
+  const animationRef = useRef<number | null>(null); // Animation frame ID uchun tur
 
 
 
@@ -201,9 +201,9 @@ const FullContact: React.FC = () => {
       scrollPosition -= scrollSpeed;
       if (scrollPosition <= -itemWidth) {
         scrollPosition += itemWidth;
-        carousel.appendChild(carousel.firstChild); // Cheksiz aylanish uchun oxiriga qo'shish
+        carousel?.appendChild(carousel.firstChild as Node); // Cheksiz aylanish uchun oxiriga qo'shish
       }
-      carousel.style.transform = `translateX(${scrollPosition}px)`;
+      carousel!.style.transform = `translateX(${scrollPosition}px)` as unknown as string as CSSProperties;
       animationRef.current = requestAnimationFrame(animate);
     };
 
