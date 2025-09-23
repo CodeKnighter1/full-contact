@@ -34,8 +34,6 @@ import m10 from '@/images/mahsulot/image.png'
 import Carousel from './Carousel';
 import cofee from '@/images/Hamkorlarimiz/cofelitto.png'
 import maxw from '@/images/Hamkorlarimiz/maxw.png'
-// Videos are served from public/videos to avoid bundling/import issues
-
 
 
 
