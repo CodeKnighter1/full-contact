@@ -396,50 +396,42 @@ const FullContact: React.FC = () => {
                     <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-4 mt-4'>
                       <iframe
                         src="https://www.youtube.com/embed/B3RgSFGSYss"
-                        width="200"
-                        height="260"
                         title="YouTube Shorts player"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerPolicy="strict-origin-when-cross-origin"
                         allowFullScreen
-                        className="w-full h-full rounded-lg object-contain"
+                        className="w-[180px] h-[250px] sm:w-[200px] md:w-[220px] lg:w-[320px] rounded-lg object-contain"
                       ></iframe>
 
                       <iframe
                         src="https://www.youtube.com/embed/88_USdQr204"
-                        width="200"
-                        height="300"
                         title="YouTube Shorts player"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerPolicy="strict-origin-when-cross-origin"
                         allowFullScreen
-                        className="w-full h-full rounded-lg object-contain"
+                        className="w-[180px] h-[250px] sm:w-[200px] md:w-[250px] lg:w-[320px] rounded-lg object-contain"
                       ></iframe>
 
                       <iframe
                         src="https://youtube.com/embed/Vun_jMPowq4"
-                        width="200"
-                        height="260"
                         title="YouTube Shorts player"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerPolicy="strict-origin-when-cross-origin"
                         allowFullScreen
-                        className="w-full h-full rounded-lg object-contain"
+                        className="w-[180px] h-[250px] sm:w-[200px] md:w-[250px] lg:w-[320px] rounded-lg object-contain"
                       ></iframe>
 
                       <iframe
                         src="https://youtube.com/embed/o4SCL-2VxVY"
-                        width="200"
-                        height="260"
                         title="YouTube Shorts player"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerPolicy="strict-origin-when-cross-origin"
                         allowFullScreen
-                        className="w-full h-full rounded-lg object-contain"
+                        className="w-[180px] h-[250px] sm:w-[200px] md:w-[250px] lg:w-[320px] rounded-lg object-contain"
                       ></iframe>
                     </div>
                     <button className='w-full flex justify-center items-center mt-4 rounded-lg bg-gray-50 p-2 hover:bg-gray-100 transition-colors duration-200'>
