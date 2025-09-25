@@ -603,58 +603,6 @@ const FullContact: React.FC = () => {
             </InfoCard>
           </motion.div>
 
-          <motion.div
-            initial={variants.fadeInUp.initial}
-            animate={variants.fadeInUp.animate}
-            transition={variants.fadeInUp.transition}
-          >
-            <InfoCard variant="gradient" className="max-w-4xl mx-auto">
-              <SectionHeader gradient>SAVOL - JAVOBLAR</SectionHeader>
-              <div className="space-y-6">
-                <div className="bg-white/90 rounded-xl p-4 md:p-6 shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-teal-500">
-                  <h3 className="flex items-center text-lg md:text-xl font-medium text-gray-900 mb-2">
-                    <img src={ques} alt="Question badge" className="w-6 h-6 md:w-8 md:h-8 mr-2 object-contain" />
-                    Savol: Nega aynan ko'chma do'kon?
-                  </h3>
-                  <h3 className="flex items-center text-lg md:text-xl font-medium text-gray-700 ml-8 md:ml-10">
-                    {/* <img src={solve} alt="Solution badge" className="w-5 h-5 md:w-7 md:h-7 mr-2 object-contain" /> */}
-                    Javob: 👉 Metal konstruksiyadan qo'rilgan ko'chma do'kon narx jihatidan bozordagi boshqalardan sezilarli darajada arzonroq.
-                  </h3>
-                </div>
-                <div className="bg-white/90 rounded-xl p-4 md:p-6 shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-teal-500">
-                  <h3 className="flex items-center text-lg md:text-xl font-medium text-gray-900 mb-2">
-                    <img src={ques} alt="Question badge" className="w-6 h-6 md:w-8 md:h-8 mr-2 object-contain" />
-                    Savol: Bizdan harid qilishingizni nima qulayliklar bor?
-                  </h3>
-                  <h3 className="flex items-center text-lg md:text-xl font-medium text-gray-700 ml-8 md:ml-10">
-                    {/* <img src={solve} alt="Solution badge" className="w-5 h-5 md:w-7 md:h-7 mr-2 object-contain" /> */}
-                    Javob: 👉 Boshlang‘ich va o‘rta bizneslar uchun qimmat ijara yoki qimmat qurilish xarajatlari muammo. Biz esa ular uchun biznesni boshlash yoki kengaytirishning arzon va qulay yechimini taklif qilamiz.
-                  </h3>
-                </div>
-                <div className="bg-white/90 rounded-xl p-4 md:p-6 shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-teal-500">
-                  <h3 className="flex items-center text-lg md:text-xl font-medium text-gray-900 mb-2">
-                    <img src={ques} alt="Question badge" className="w-6 h-6 md:w-8 md:h-8 mr-2 object-contain" />
-                    Savol: Buyurtmani kim tayyorlaydi?
-                  </h3>
-                  <h3 className="flex items-center text-lg md:text-xl font-medium text-gray-700 ml-8 md:ml-10">
-                    {/* <img src={solve} alt="Solution badge" className="w-5 h-5 md:w-7 md:h-7 mr-2 object-contain" /> */}
-                    Javob: 👉 Buyurtmalarni oddiy ustalar emas, balki haqiqiy professionallar bajaradi. Biz faqat sifatli materiallardan foydalanamiz.
-                  </h3>
-                </div>
-                <div className="bg-white/90 rounded-xl p-4 md:p-6 shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-teal-500">
-                  <h3 className="flex items-center text-lg md:text-xl font-medium text-gray-900 mb-2">
-                    <img src={ques} alt="Question badge" className="w-6 h-6 md:w-8 md:h-8 mr-2 object-contain" />
-                    Savol: Bizga nima uchun ishonishingiz kerak?
-                  </h3>
-                  <h3 className="flex items-center text-lg md:text-xl font-medium text-gray-700 ml-8 md:ml-10">
-                    {/* <img src={solve} alt="Solution badge" className="w-5 h-5 md:w-7 md:h-7 mr-2 object-contain" /> */}
-                    Javob: 👉 Bizning fabrikamiz O‘zbekiston bo'yicha birinchi ochilgan va birinchi raqmli fabrika hisoblanadi va 8 yildan buyon faoliyatda!
-                  </h3>
-                </div>
-              </div>
-            </InfoCard>
-          </motion.div>
-
           {/* Key Features */}
           <motion.div
             initial={variants.fadeInUp.initial}
@@ -762,67 +710,6 @@ const FullContact: React.FC = () => {
                 </ul>
               </InfoCard>
             </motion.div>
-          </motion.div>
-
-          {/* Statistics */}
-          <motion.div
-            initial={variants.fadeInUp.initial}
-            animate={variants.fadeInUp.animate}
-            transition={variants.fadeInUp.transition}
-          >
-            <InfoCard className='bg-white rounded-lg p-4 md:p-6 mb-6 shadow-lg hover:shadow-2xl transition-all duration-300'>
-              <SectionHeader className='text-black'>
-                "QO'SHIMCHA" <br /> <span className="text-yellow-600 text-2xl">MA'LUMOTLAR</span>
-              </SectionHeader>
-              {/* 
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
-                {[
-                  { icon: TrendingUp, label: "Yillik o'sish", value: "15-20%" },
-                  { icon: Award, label: "2025-yilgi reja", value: "800-1000" },
-                  { icon: Users2, label: "Viloyatlar bo'yicha mutahasislarimiz", value: "100+" }
-                ].map((stat, index) => {
-                  const IconComponent = stat.icon;
-                  return (
-                    <motion.div
-                      key={stat.label}
-                      className="text-center p-6 bg-white/60 rounded-xl"
-                      initial={variants.scaleIn.initial}
-                      animate={variants.scaleIn.animate}
-                      transition={{ delay: 0.1 * index, ...variants.scaleIn.transition }}
-                    >
-                      <IconComponent className="w-8 h-8 text-yellow-600 mx-auto mb-3" />
-                      <div className="text-2xl font-bold text-black mb-1">{stat.value}</div>
-                      <div className="text-sm text-slate-600">{stat.label}</div>
-                    </motion.div>
-                  );
-                })}
-              </div> */}
-
-              <motion.div
-                className="space-y-6 text-slate-600 leading-relaxed"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                {[
-                  "Ko'chma do'konning ishlab chiqarish quvvatimiz har kuni 20 kv ya'ni 2 tagacha, oyiga 610 kv 50 tagacha va yiliga 7300 kv 600 dan ortiq tayyor mahsulot ishlab chiqamiz.",
-                  "Viloyatlar miqyosida 100 ga yaqin ustalar va 10 dan ortiq mutaxasislarimiz faoliyat yuritadi.",
-                  "Ko'chma do'konlar fabrikasi o'zbekistondagi birinchi va yagona fabrika hisoblanadi."
-                ].map((text, index) => (
-                  <motion.p
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className="p-4 bg-white/50 rounded-lg border-l-4 border-red-200"
-                  >
-                    {text}
-                  </motion.p>
-                ))}
-              </motion.div>
-            </InfoCard>
           </motion.div>
 
           {/* Contact Section */}
