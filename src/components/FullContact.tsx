@@ -11,7 +11,6 @@ import {
   Award,
   ArrowDownIcon
 } from 'lucide-react';
-import ques from '@/images/icons8-question-48.png';
 import instagram from '@/images/icons8-instagram-48.png'
 import telegram from '@/images/icons8-telegram-logo-50.png';
 import correct from '@/images/icons8-correct-100.png'
@@ -111,7 +110,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
   className = "",
   gradient = false
 }) => (
-  <h2 className={`text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 ${gradient
+  <h2 className={`text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 md:mb-6 ${gradient
     ? 'bg-gradient-to-r from-teal-600 via-yellow-600 to-cyan-600 bg-clip-text text-transparent'
     : 'text-slate-800'
     } ${className}`}>
@@ -124,7 +123,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
   className = "",
   variant = 'default'
 }) => {
-  const baseClasses = " p-6 md:p-8 mb-8 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm";
+  const baseClasses = "p-3 md:p-4 mb-2 md:mb-4 backdrop-blur-sm";
 
   const variantClasses = {
     default: "bg-white/90",
@@ -175,8 +174,6 @@ const FullContact: React.FC = () => {
   const variants = useMemo(() => createAnimationVariants(prefersReducedMotion), [prefersReducedMotion]);
   const carouselRef = useRef<HTMLDivElement>(null); // Div elementi uchun aniq tur
   const animationRef = useRef<number | null>(null); // Animation frame ID uchun tur
-
-
 
   const partners = [
     index, // O'rnini rasmlar bilan almashtiring
@@ -330,7 +327,7 @@ const FullContact: React.FC = () => {
             className="text-4xl md:text-6xl lg:text-7xl font-bold mt-6 mb-6"
             whileHover={prefersReducedMotion ? {} : { scale: 1.02 }}
           >
-            <span className="text-3xl md:text-5xl lg:text-6xl font-serif leading-tight mb-4 text-gray-900 bg-clip-text">
+            <span className="text-2xl md:text-5xl lg:text-6xl font-serif leading-tight mb-4 text-gray-900 bg-clip-text">
               "KO'CHMA DO'KON" LAR FABRIKASI.
             </span>
             <br />
@@ -391,128 +388,101 @@ const FullContact: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className='mt-6'>
-                    <h1 className='text-xl font-medium text-gray-900'>Bizning vediolarimiz</h1>
-                    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-4 mt-4'>
-                      <iframe
-                        src="https://www.youtube.com/embed/B3RgSFGSYss"
-                        title="YouTube Shorts player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                        className="w-[180px] h-[250px] sm:w-[200px] md:w-[220px] lg:w-[320px] rounded-lg object-contain"
-                      ></iframe>
-
-                      <iframe
-                        src="https://www.youtube.com/embed/88_USdQr204"
-                        title="YouTube Shorts player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                        className="w-[180px] h-[250px] sm:w-[200px] md:w-[250px] lg:w-[320px] rounded-lg object-contain"
-                      ></iframe>
-
-                      <iframe
-                        src="https://youtube.com/embed/Vun_jMPowq4"
-                        title="YouTube Shorts player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                        className="w-[180px] h-[250px] sm:w-[200px] md:w-[250px] lg:w-[320px] rounded-lg object-contain"
-                      ></iframe>
-
-                      <iframe
-                        src="https://youtube.com/embed/o4SCL-2VxVY"
-                        title="YouTube Shorts player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                        className="w-[180px] h-[250px] sm:w-[200px] md:w-[250px] lg:w-[320px] rounded-lg object-contain"
-                      ></iframe>
+                  {/* YouTube Videos */}
+                  <div className="mt-10 sm:mt-12 md:mt-16">
+                    <h3 className="text-2xl sm:text-2xl md:text-3xl font-semibold text-gray-900 mb-6 sm:mb-8">
+                      Bizning videolarimiz
+                    </h3>
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-6">
+                      {[
+                        "B3RgSFGSYss",
+                        "88_USdQr204",
+                        "Vun_jMPowq4",
+                        "o4SCL-2VxVY"
+                      ].map((videoId, index) => (
+                        <div key={index} className="aspect-[9/16] rounded-xl overflow-hidden bg-gray-100">
+                          <iframe
+                            src={`https://www.youtube.com/embed/${videoId}`}
+                            title={`Video ${index + 1}`}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="w-full h-full"
+                          />
+                        </div>
+                      ))}
                     </div>
-                    <button className='w-full flex justify-center items-center mt-4 rounded-lg bg-gray-50 p-2 hover:bg-gray-100 transition-colors duration-200'>
+                    <div className="text-center mt-6 sm:mt-8">
                       <a
                         href="https://www.youtube.com/@Kochmadokon750"
-                        target="_blank" rel="noopener noreferrer"
-                        className='text-gray-900 text-center font-medium hover:text-blue-600 transition-colors duration-200'>
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold px-8 py-3 rounded-xl transition-colors text-base sm:text-lg"
+                      >
                         Batafsil ko'rish
                       </a>
-                    </button>
+                    </div>
                   </div>
 
                 </div>
               </div>
 
-              <div className="mt-10 flex justify-center space-x-4">
-                <h1 className='text-xl font-medium text-gray-900'>Yetkazib berish</h1>
-              </div>
-              <div className="grid md:grid-cols-3 gap-6 mt-6">
-                {[
-                  { title: '', desc: 'Ko\'chma do\'kon respublika bo\'ylab yetkazish hamda o\'rnatib berishni taminlaydi. ' }
-                ].map((step, index) => (
-                  <motion.div
-                    key={index}
-                    className="bg-white/20 rounded-xl p-4 md:p-6 shadow-md hover:shadow-lg transition-all duration-300"
-                    initial={variants.fadeInUp.initial}
-                    animate={variants.fadeInUp.animate}
-                    transition={{ delay: 0.1 * index, ...variants.fadeInUp.transition }}
-                  >
-                    <h3 className="text-xl text-gray-900 font-bold mb-2">{step.title}</h3>
-                    <p className='text-[17px] md:text-2xl text-gray-900 leading-relaxed'>{step.desc}</p>
-                  </motion.div>
-                ))}
+              {/* Delivery Info */}
+              <div className="p-4 sm:p-6 mt-5 sm:mt-8">
+                <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">
+                  Yetkazib berish
+                </h3>
+                <p className="text-xl sm:text-2xl text-gray-700 leading-relaxed">
+                  Ko'chma do'kon respublika bo'ylab yetkazish hamda o'rnatib berishni taminlaydi.
+                </p>
               </div>
 
               <div className="p-4 sm:p-6 md:p-8">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-800 mb-6 text-center">
                   Ko'chma do'kon mahsulotlari
                 </h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-                  <ul className="list-disc pl-5 space-y-2">
-                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                  <ul className="list-disc pl-5 space-y-0.5">
+                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
                       Ko'chma do'konlar
                     </li>
-                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
                       Savdo ofislari
                     </li>
-                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
                       Sotuv ofislari
                     </li>
-                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
                       Savdo va xizmat ko'rsatish bino inshoatlari
                     </li>
-                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
                       Aqlli-bekatlar
                     </li>
-                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
                       Sotuv ofislari
                     </li>
                   </ul>
 
-                  <ul className="list-disc pl-5 space-y-2">
-                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                  <ul className="list-disc pl-5 space-y-0.5">
+                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
                       Bio-Tualetlar
                     </li>
-                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
                       Bankomatlar
                     </li>
-                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
                       Sartaroshxona
                     </li>
-                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
                       Modulli uylar
                     </li>
-                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
                       Kontainerdan uylar
                     </li>
-                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
                       Omborxonalar
                     </li>
-                    <li className="text-base sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
                       Va turli inshoatlar
                     </li>
                   </ul>
@@ -586,17 +556,17 @@ const FullContact: React.FC = () => {
                 NEGA <span className="text-teal-600">"FABRIKA"</span>
               </SectionHeader>
 
-              <div className="grid md:grid-cols-2 gap-1.5">
+              <div className="grid md:grid-cols-2 gap-2">
                 {COMPANY_ADVANTAGES.map((advantage, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-start space-x-3 p-4 rounded-lg hover:bg-white/40 transition-colors"
+                    className="flex items-start space-x-2 lg:p-3 rounded-lg hover:bg-white/40 transition-colors"
                     initial={variants.fadeInUp.initial}
                     animate={variants.fadeInUp.animate}
                     transition={{ delay: 0.1 * index, ...variants.fadeInUp.transition }}
                   >
                     <Award className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-950">{advantage}</span>
+                    <span className="text-gray-950 text-lg">{advantage}</span>
                   </motion.div>
                 ))}
               </div>
@@ -608,7 +578,7 @@ const FullContact: React.FC = () => {
             initial={variants.fadeInUp.initial}
             animate={variants.fadeInUp.animate}  // <-- Animate immediately
             transition={variants.fadeInUp.transition}
-            className='bg-white p-4 md:p-6 mb-6 shadow-lg hover:shadow-2xl transition-all duration-300'
+            className='p-1 md:p-6 mb-6 hover:shadow-2xl transition-all duration-300'
           >
             <SectionHeader className='text-gray-900 flex items-center justify-center gap-2'>
               <img src={advantage} alt="advantage icon" className='w-10 h-10 md:w-14 md:h-14 mb-7' />
@@ -618,7 +588,7 @@ const FullContact: React.FC = () => {
 
             </SectionHeader>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-2 md:gap-6">
               {KEY_FEATURES.map((feature, index) => {
                 const IconComponent = feature.icon;
                 return (
@@ -630,16 +600,16 @@ const FullContact: React.FC = () => {
                     transition={{ delay: 0.1 * index, ...variants.scaleIn.transition }}
                     whileHover={prefersReducedMotion ? {} : { y: -5 }}
                   >
-                    <InfoCard className="h-full hover:shadow-2xl rounded-lg">
+                    <InfoCard className="h-full">
                       <div className="flex items-start space-x-4">
-                        <div className={`p-3 rounded-xl bg-gradient-to-r ${feature.color} shadow-lg`}>
+                        <div className={`p-3 hidden lg:inline-block rounded-xl bg-gradient-to-r ${feature.color} shadow-lg`}>
                           <IconComponent className="w-6 h-6 text-white" />
                         </div>
                         <div className="flex-1">
-                          <h4 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-teal-600 transition-colors">
+                          <h4 className="text-2xl md:text-3xl font-bold text-slate-800 mb-3 group-hover:text-teal-600 transition-colors">
                             {feature.title}
                           </h4>
-                          <p className="text-slate-600 leading-relaxed">
+                          <p className="text-slate-800 font-medium text-lg leading-relaxed">
                             {feature.description}
                           </p>
                         </div>
@@ -667,7 +637,7 @@ const FullContact: React.FC = () => {
                 KO'CHMA DO'KON <br /> HAQIDA
               </motion.h2>
 
-              <div className="space-y-4 text-black leading-relaxed">
+              <div className="space-y-4 text-black text-lg leading-relaxed">
                 {[
                   "Metal konstruksiyadan qurilgan do'konlar bugungi kunda eng samarali va zamonaviy yechim hisoblanadi. Bunday inshootlar nafaqat mustahkam va ishonchli, balki iqtisodiy jihatdan ham foydali.",
                   "Tez quriladi – qisqa muddat ichida do'koningizni ishga tushirishingiz mumkin. Arzonroq – an'anaviy g'isht yoki beton qurilishidan ancha tejamkor. Ko'chma imkoniyat – kerak bo'lsa, konstruksiyani boshqa joyga ko'chirib o'rnatish mumkin.",
@@ -698,7 +668,7 @@ const FullContact: React.FC = () => {
                   {SERVICES.map((service, index) => (
                     <motion.li
                       key={index}
-                      className="flex items-start space-x-3 text-black"
+                      className="flex items-start text-lg space-x-3 text-black"
                       initial={variants.fadeInUp.initial}
                       animate={variants.fadeInUp.animate}
                       transition={{ delay: 0.1 * index, ...variants.fadeInUp.transition }}
