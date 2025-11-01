@@ -2,7 +2,7 @@ import FullContact from "./components/FullContact"
 
 function App() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <FullContact />
     </div>
   )
