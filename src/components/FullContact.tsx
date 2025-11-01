@@ -317,7 +317,7 @@ const FullContact: React.FC = () => {
             whileHover={prefersReducedMotion ? {} : { scale: 1.02 }}
           >
             <span className="text-2xl md:text-5xl lg:text-6xl font-serif leading-tight mb-4 text-gray-900 bg-clip-text">
-              "KO'CHMA DO'KON" FABRIKASI.
+              "KO'CHMA DO'KON" <br /> FABRIKASI.
             </span>
           </motion.h1>
           <motion.p
