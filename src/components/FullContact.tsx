@@ -343,7 +343,7 @@ const FullContact: React.FC = () => {
                 <p className="text-xl font-semibold text-center text-gray-900">
                   Yengil konstruksiyadan iborat.
                 </p>
-                <p>
+                <p className='font-medium'>
                   Ko'chma do'kon - savdo va xizmat ko'rsatish shahobchalari - kiyoskalar -
                   kapsula do'kon - konteyner - foodtruck va modul uylar - ishlab chiqarish.
                 </p>
@@ -357,7 +357,7 @@ const FullContact: React.FC = () => {
 
               {/* Yo'nalishlarimiz */}
               <div className="p-3 sm:p-4 md:p-6 lg:p-8">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-800 mb-4 sm:mb-6 text-center">
+                <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-wide text-gray-800 mb-4 sm:mb-6 text-center">
                   Yo'nalishlarimiz
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4">
@@ -370,9 +370,9 @@ const FullContact: React.FC = () => {
                       "Food Trucklar",
                       "Akfa Butkalar"
                     ].map((item, index) => (
-                      <div className='flex items-center gap-1'>
+                      <div className='flex items-center gap-2'>
                         <img src={correcto} alt="" className='w-7' />
-                        <li key={index} className="tracking-wide text-lg sm:text-xl md:text-2xl text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                        <li key={index} className="tracking-wide text-xl sm:text-xl md:text-2xl font-semibold text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
                           {item}
                         </li>
                       </div>
@@ -383,22 +383,21 @@ const FullContact: React.FC = () => {
 
               {/* Mahsulotlarimiz */}
               <div className="p-3 sm:p-4 md:p-6 lg:p-8">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-800 mb-4 sm:mb-6 text-center">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-wider text-gray-800 mb-4 sm:mb-6 text-center">
                   Mahsulotlarimiz
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
-                  <ul className="list-none pl-4 sm:pl-5 space-y-1 sm:space-y-2">
+                <div className="grid grid-cols-2 md:grid-cols-2 gap-1 sm:gap-4 md:gap-6">
+                  <ul className="list-none sm:pl-5 space-y-1 sm:space-y-2">
                     {[
                       "Ko'chma do'konlar",
-                      "Savdo ofislari",
-                      "Sotuv ofislari",
-                      "Savdo va xizmat ko'rsatish bino-inshoatlari",
+                      "Savdo va sotuv ofislari",
+                      "Xizmat ko'rsatish bino-inshoatlari",
                       "Aqlli-bekatlar",
                       "Sotuv ofislari"
                     ].map((item, index) => (
-                      <div className='flex items-center gap-1'>
+                      <div className='flex items-center gap-2'>
                         <img src={correcto} alt="" className='w-7' />
-                        <li key={index} className="text-lg sm:text-xl md:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                        <li key={index} className="text-lg sm:text-xl md:text-lg font-semibold text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
                           {item}
                         </li>
                       </div>
@@ -417,7 +416,7 @@ const FullContact: React.FC = () => {
                     ].map((item, index) => (
                       <div className='flex items-center gap-1'>
                         <img src={correcto} alt="" className='w-7' />
-                      <li key={index} className="tracking-wide text-lg sm:text-xl md:text-2xl text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                      <li key={index} className="tracking-wide text-lg sm:text-xl md:text-2xl font-semibold text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
                         {item}
                       </li>
                       </div>
@@ -485,7 +484,7 @@ const FullContact: React.FC = () => {
                     transition={{ delay: 0.1 * index, ...variants.fadeInUp.transition }}
                   >
                     <Award className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-950 tracking-wide text-lg sm:text-xl md:text-2xl">{advantage}</span>
+                    <span className="text-slate-800 tracking-wide font-medium text-lg sm:text-xl md:text-2xl">{advantage}</span>
                   </motion.div>
                 ))}
               </div>
@@ -502,7 +501,7 @@ const FullContact: React.FC = () => {
             <SectionHeader className='text-gray-900 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-2'>
               <img src={advantage} alt="advantage icon" className='w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14' />
               <div className="text-center sm:text-left">
-                Ushbu mahsulotimizning <br className="hidden sm:block" />
+                Mahsulotning <br className="hidden sm:block" />
                 <span className="text-teal-700">AFZALLIKLARI</span>
               </div>
             </SectionHeader>
@@ -528,7 +527,7 @@ const FullContact: React.FC = () => {
                           <h4 className="text-xl sm:text-2xl md:text-2xl font-semibold lg:text-3xl text-slate-800 mb-2 sm:mb-3 group-hover:text-teal-600 transition-colors">
                             {feature.title}
                           </h4>
-                          <p className="text-slate-800 tracking-wide text-lg sm:text-xl md:text-2xl font-sans leading-relaxed">
+                          <p className="text-slate-800 tracking-wide text-lg sm:text-xl md:text-2xl font-medium leading-relaxed">
                             {feature.description}
                           </p>
                         </div>
@@ -542,22 +541,22 @@ const FullContact: React.FC = () => {
 
           {/* Comparison Section */}
           <div className='bg-gradient-to-br from-blue-50 via-white to-blue-50/30 rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 shadow-sm border border-blue-100/50 hover:shadow-md transition-all duration-300'>
-            <div className="space-y-4 sm:space-y-6">
+            <div className="space-y-8 sm:space-y-6">
               <div>
-                <h1 className='text-xl sm:text-2xl md:text-2xl font-semibold mb-3'>O'zingiz qursangiz qanday bo'ladi?</h1>
-                <div className="space-y-2 tracking-wide text-lg sm:text-xl md:text-2xl font-sans">
-                  <p>Siz materiallarni do'koningiz uchun metrlab olasiz va bu qimmatga tushadi.</p>
-                  <p>Siz bu do'konni ko'chadagi ustalarga tayyorlatasiz.</p>
-                  <p>Siz har doim ustalarning ustida turishingiz va ularni nazorat qilish uchun vaqtingizni ajratishingiz kerak bo'ladi.</p>
-                  <p>Siz do'konning har bir qismi uchun alohida usta topishingiz kerak bo'ladi.</p>
+                <h1 className='text-2xl sm:text-2xl md:text-2xl text-center font-semibold mb-3'>O'zingiz qursangiz qanday bo'ladi?</h1>
+                <div className="space-y-2 tracking-wide text-lg sm:text-xl md:text-2xl font-medium">
+                  <p>Siz xom-ashyolarni do'koningiz uchun metrlab olasiz va bu qimmatga tushadi.</p>
+                  <p>Siz bu do'konni tayyorlashda tajribasi kam ustalarga tayyorlatasiz.</p>
+                  <p>Siz do'kon qurilishining boshlanishidan oxirigacha jarayonni nazorat qilishingiz kerak bo'ladi va bu sizning vaqt ajratishingizni talab qiladi.</p>
+                  <p>Siz do'konning har bir qismi uchun alohida usta topishingiz kerak bo'ladi. Misol uchun alikafonchi, tunikafonchi, elektr montajchi va boshqalar.</p>
                 </div>
               </div>
               <div>
-                <h1 className='text-xl sm:text-xl md:text-2xl font-semibold mb-3'>Biz qursak qanday bo'ladi?</h1>
-                <div className="space-y-2 tracking-wide text-lg sm:text-xl md:text-2xl">
-                  <p>Biz materiallarni tonnalab optom narxga olamiz va bu arzona aylanadi.</p>
-                  <p>Bizda do'konlarni bu sohadagi ko'p yillik tajribaga ega mutahasislar yasaydi.</p>
-                  <p>Bizda esa bu ish qurilish sohasidagi malakali brigadirlar tomonidan nazoratga olinadi.</p>
+                <h1 className='text-2xl sm:text-xl md:text-2xl text-center font-semibold mb-3'>Biz qursak qanday bo'ladi?</h1>
+                <div className="space-y-2 tracking-wide text-lg sm:text-xl md:text-2xl font-medium">
+                  <p>Biz materiallarni zavoddan tonnalab optom narxga olamiz va bu arzona aylanadi.</p>
+                  <p>Bizda do'konlarni bu sohadagi ko'p yillik tajribaga ega viloyatlar bo'ylab 100 dan ortiq ustalar va 10 ga yaqin mutahasislar yasaydi.</p>
+                  <p>Bizda esa bu ish qurilish sohasidagi malakali brigadirlar tomonidan to'liq nazoratga olinadi.</p>
                   <p>Bizda hamma mutaxassislar fabrikada bo'lganligi tufayli do'koningiz tez fursatda tayyor bo'ladi.</p>
                 </div>
               </div>
@@ -584,7 +583,7 @@ const FullContact: React.FC = () => {
                   {SERVICES.map((service, index) => (
                     <motion.li
                       key={index}
-                      className="flex items-start text-lg tracking-wide space-x-3 text-black"
+                      className="flex items-start text-lg font-medium tracking-wide space-x-3 text-black"
                       initial={variants.fadeInUp.initial}
                       animate={variants.fadeInUp.animate}
                       transition={{ delay: 0.1 * index, ...variants.fadeInUp.transition }}
@@ -661,25 +660,25 @@ const FullContact: React.FC = () => {
 
             {/* Asosiy narx ma'lumoti */}
             <div className="space-y-4 mb-8">
-              <div className="bg-white/60 rounded-lg p-4 md:p-5">
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  Har bir kvadrat devor, tom va pataloklari <span className="font-semibold text-blue-600">35$</span> dan boshlab <span className="font-semibold text-blue-600">100$</span> gacha bo'lishi mumkin.
+              <div className="bg-white/60 rounded-lg px-4 md:p-5">
+                <p className="text-gray-700 text-lg font-medium leading-relaxed">
+                  Har bir kvadrat devor, tom va pataloklari <span className="font-semibold text-blue-600">35$</span> dan boshlab <span className="font-semibold text-blue-600">100$</span> gacha bo'lishi mumkin. <br />
+                  Agar poldan hisoblaydigan bo'lsak <span className="font-semibold text-blue-600">100$</span> dan <span className="font-semibold text-blue-600">400$</span> gacha.
                 </p>
               </div>
 
-              <div className="bg-white/60 rounded-lg p-4 md:p-5">
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  Sababi bunda ishlatiladigan mahsulotlarning sifati va chidamliligiga qarab narxlar o'zgaradi. Agar poldan hisoblaydigan bo'lsak <span className="font-semibold text-blue-600">100$</span> dan <span className="font-semibold text-blue-600">400$</span> gacha.
+              <div className="bg-white/60 rounded-lg px-4 md:p-5">
+                <p className="text-gray-700 text-lg font-medium leading-relaxed">
+                  Sababi bunda ishlatiladigan mahsulotlarning sifati va chidamliligiga qarab narxlar o'zgaradi. 
                 </p>
               </div>
 
               <div className="bg-blue-50/50 rounded-lg p-4 md:p-5 border-l-4 border-blue-500">
-                <p className="text-gray-700 text-lg leading-relaxed">
+                <p className="text-gray-700 text-lg font-semibold leading-relaxed">
                   Do'konni dizayn, razmer va materiallariga qarab narxlar o'zgarishi mumkin. Yaxshi sifatli materialdan qimmatroq va jozibaliroq bo'ladi.
                 </p>
               </div>
             </div>
-
           </div>
 
           {/* Contact Section */}
@@ -722,7 +721,7 @@ const FullContact: React.FC = () => {
                       </h3>
                       <a
                         href="https://t.me/kochma_dokon_adminstratsiya"
-                        className="inline-block bg-teal-600 text-white font-semibold py-2 sm:py-2.5 md:py-3 px-8 sm:px-10 md:px-12 rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm sm:text-base md:text-lg w-full sm:w-auto text-center"
+                        className="inline-block bg-teal-600 text-white font-semibold py-2 sm:py-2.5 md:py-3 px-8 sm:px-10 md:px-12 rounded-lg hover:bg-blue-700 transition-colors duration-300 text-base sm:text-base md:text-lg w-full sm:w-auto text-center"
                       >
                         Telegram
                       </a>
@@ -730,7 +729,7 @@ const FullContact: React.FC = () => {
 
                     <div className='flex gap-2 sm:gap-3 mt-3 sm:mt-4 items-start bg-gray-50 px-3 sm:px-4 py-3 sm:py-4 md:py-5 rounded-lg'>
                       <MapPin className='text-teal-600 w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5' />
-                      <h3 className='text-sm sm:text-base md:text-lg font-medium'>
+                      <h3 className='text-base sm:text-base md:text-lg font-medium'>
                         Toshkent shahar, Yangihayot tumani <br />
                         Metro: Turon bekat <br />
                         Index bozor chorraxasi
@@ -741,7 +740,7 @@ const FullContact: React.FC = () => {
                         href="https://maps.app.goo.gl/abZn34TbaSjzdd9c6"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-base sm:text-lg md:text-xl text-center font-semibold flex gap-1 sm:gap-2 items-center justify-center text-yellow-300"
+                        className="text-lg sm:text-lg md:text-xl text-center font-semibold flex gap-1 sm:gap-2 items-center justify-center text-yellow-300"
                       >
                         <MapPin className="w-5 h-5 sm:w-6 sm:h-6" />
                         Lokatsiyamiz
