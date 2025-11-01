@@ -8,8 +8,7 @@ import {
   UserCheck,
   Phone,
   MapPin,
-  Award,
-  ArrowDownIcon
+  Award
 } from 'lucide-react';
 import instagram from '@/images/icons8-instagram-48.png'
 import telegram from '@/images/icons8-telegram-logo-50.png';
@@ -17,9 +16,6 @@ import correct from '@/images/icons8-correct-100.png'
 import advantage from '@/images/icons8-advantage-34.png'
 import contact from '@/images/icons8-contact-58.png'
 
-import index from '@/images/Hamkorlarimiz/photo_2025-09-19_18-01-10.jpg'
-import xalq from '@/images/Hamkorlarimiz/photo_2025-09-19_18-01-41.jpg'
-import huquq from '@/images/Hamkorlarimiz/photo_2025-09-19_18-01-46.jpg'
 import m1 from '@/images/mahsulot/image copy 2.png'
 import m2 from '@/images/mahsulot/image copy 16.png'
 import m3 from '@/images/mahsulot/image copy 15.png'
@@ -31,8 +27,7 @@ import m8 from '@/images/mahsulot/image copy 11.png'
 import m9 from '@/images/mahsulot/image copy.png'
 import m10 from '@/images/mahsulot/image.png'
 import Carousel from './Carousel';
-import cofee from '@/images/Hamkorlarimiz/cofelitto.png'
-import maxw from '@/images/Hamkorlarimiz/maxw.png'
+import correcto from '@/images/icons8-correct-64 (1).png'
 
 
 
@@ -40,25 +35,25 @@ import maxw from '@/images/Hamkorlarimiz/maxw.png'
 const KEY_FEATURES = [
   {
     icon: Clock,
-    title: 'Qurilish tezligi',
+    title: 'Qurilish tezligi -',
     description: 'An\'anaviy g\'isht yoki beton binolarga qaraganda, metall konstruksiya qismlari oldindan tayyorlanadi va joyida tez yig\'iladi. Bu vaqt va mehnatni tejaydi.',
     color: 'from-teal-500 to-cyan-500'
   },
   {
     icon: UserCheck,
-    title: 'Mustahkamlik va chidamlilik',
+    title: 'Mustahkamlik va chidamlilik -',
     description: 'Metall konstruksiyalar zilzilaga, shamolga va boshqa tashqi ta\'sirlarga bardoshli. Yillar davomida shaklini yo\'qotmaydi.',
     color: 'from-yellow-500 to-orange-500'
   },
   {
     icon: Cpu,
-    title: 'Arzonroq xarajat',
+    title: 'Arzonroq xarajat -',
     description: 'Qurilish materiali va vaqt kam sarflangani uchun umumiy narx ham nisbatan past bo\'ladi. Uzoq muddatda ta\'mirlash xarajatlari ham kamroq bo\'ladi.',
     color: 'from-emerald-500 to-teal-500'
   },
   {
     icon: Heart,
-    title: 'Ko\'chirish va kengaytirish imkoniyati',
+    title: 'Ko\'chirish va kengaytirish imkoniyati -',
     description: 'Metall konstruksiya modulli bo\'lgani uchun keyinchalik do\'konni kattalashtirish yoki boshqa joyga ko\'chirish osonroq.',
     color: 'from-pink-500 to-rose-500'
   }
@@ -175,14 +170,6 @@ const FullContact: React.FC = () => {
   const carouselRef = useRef<HTMLDivElement>(null); // Div elementi uchun aniq tur
   const animationRef = useRef<number | null>(null); // Animation frame ID uchun tur
 
-  const partners = [
-    index, // O'rnini rasmlar bilan almashtiring
-    xalq,
-    huquq,
-    cofee,
-    maxw,
-  ];
-
   useEffect(() => {
     const carousel = carouselRef.current;
     let scrollPosition = 0;
@@ -292,7 +279,7 @@ const FullContact: React.FC = () => {
   ]
 
   return (
-    <div className={`min-h-screen bg-gradient-to-b from-slate-900 via-teal-900 to-slate-900 `}>
+    <div className={`min-h-screen bg-gradient-to-b from-slate-900 via-teal-900 to-slate-900 overflow-hidden`}>
       {/* Background decorations */}
       {!prefersReducedMotion && (
         <div className="absolute inset-0 opacity-30 pointer-events-none">
@@ -328,7 +315,7 @@ const FullContact: React.FC = () => {
             whileHover={prefersReducedMotion ? {} : { scale: 1.02 }}
           >
             <span className="text-2xl md:text-5xl lg:text-6xl font-serif leading-tight mb-4 text-gray-900 bg-clip-text">
-              "KO'CHMA DO'KON" LAR FABRIKASI.
+              "KO'CHMA DO'KON" FABRIKASI.
             </span>
             <br />
           </motion.h1>
@@ -365,177 +352,109 @@ const FullContact: React.FC = () => {
                   <Carousel rows={rows} baseDuration={30} pauseOnHover={true} />
                 </div>
 
-                <div className="p-4 sm:p-6 md:p-8">
-                  <div className="text-center">
-                    <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-6">
-                      BIZNING HAMKORLARIMIZ
-                    </h1>
-                  </div>
-                  <div className="overflow-hidden bg-gray-50 rounded-lg shadow-2xl py-4">
-                    <div
-                      ref={carouselRef}
-                      className="flex items-center gap-4 whitespace-nowrap"
-                      style={{ minWidth: 'max-content' }}
-                    >
-                      {partners.concat(partners).map((partner, index) => (
-                        <img
-                          key={index}
-                          src={partner}
-                          alt={`partner-${index}`}
-                          className="w-[100px] sm:w-[120px] md:w-[150px] rounded-lg object-contain inline-block"
-                        />
-                      ))}
-                    </div>
-                  </div>
 
-                  {/* YouTube Videos */}
-                  <div className="mt-10 sm:mt-12 md:mt-16">
-                    <h3 className="text-2xl sm:text-2xl md:text-3xl font-semibold text-gray-900 mb-6 sm:mb-8">
-                      Bizning videolarimiz
-                    </h3>
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-6">
-                      {[
-                        "B3RgSFGSYss",
-                        "88_USdQr204",
-                        "Vun_jMPowq4",
-                        "o4SCL-2VxVY"
-                      ].map((videoId, index) => (
-                        <div key={index} className="aspect-[9/16] rounded-xl overflow-hidden bg-gray-100">
-                          <iframe
-                            src={`https://www.youtube.com/embed/${videoId}`}
-                            title={`Video ${index + 1}`}
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            className="w-full h-full"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                    <div className="text-center mt-6 sm:mt-8">
-                      <a
-                        href="https://www.youtube.com/@Kochmadokon750"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold px-8 py-3 rounded-xl transition-colors text-base sm:text-lg"
-                      >
-                        Batafsil ko'rish
-                      </a>
-                    </div>
-                  </div>
+              </div>
 
+              {/* Yo'nalishlarimiz */}
+              <div className="p-3 sm:p-4 md:p-6 lg:p-8">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-800 mb-4 sm:mb-6 text-center">
+                  Yo'nalishlarimiz
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4">
+                  <ul className="list-none pl-4 sm:pl-5 space-y-1 sm:space-y-2">
+                    {[
+                      "Ko'chma do'kon",
+                      "Kontainer City",
+                      "Modul Uylar",
+                      "Capsula Do'konlar",
+                      "Food Trucklar",
+                      "Akfa Butkalar"
+                    ].map((item, index) => (
+                      <div className='flex items-center gap-1'>
+                        <img src={correcto} alt="" className='w-7' />
+                        <li key={index} className="tracking-wide text-lg sm:text-xl md:text-2xl text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                          {item}
+                        </li>
+                      </div>
+                    ))}
+                  </ul>
                 </div>
               </div>
 
-              {/* Delivery Info */}
-              <div className="p-4 sm:p-6 mt-5 sm:mt-8">
-                <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">
-                  Yetkazib berish
-                </h3>
-                <p className="text-xl sm:text-2xl text-gray-700 leading-relaxed">
-                  Ko'chma do'kon respublika bo'ylab yetkazish hamda o'rnatib berishni taminlaydi.
-                </p>
-              </div>
-
-              <div className="p-4 sm:p-6 md:p-8">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-800 mb-6 text-center">
-                  Ko'chma do'kon mahsulotlari
+              {/* Mahsulotlarimiz */}
+              <div className="p-3 sm:p-4 md:p-6 lg:p-8">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-800 mb-4 sm:mb-6 text-center">
+                  Mahsulotlarimiz
                 </h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-                  <ul className="list-disc pl-5 space-y-0.5">
-                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                      Ko'chma do'konlar
-                    </li>
-                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                      Savdo ofislari
-                    </li>
-                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                      Sotuv ofislari
-                    </li>
-                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                      Savdo va xizmat ko'rsatish bino inshoatlari
-                    </li>
-                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                      Aqlli-bekatlar
-                    </li>
-                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                      Sotuv ofislari
-                    </li>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
+                  <ul className="list-none pl-4 sm:pl-5 space-y-1 sm:space-y-2">
+                    {[
+                      "Ko'chma do'konlar",
+                      "Savdo ofislari",
+                      "Sotuv ofislari",
+                      "Savdo va xizmat ko'rsatish bino-inshoatlari",
+                      "Aqlli-bekatlar",
+                      "Sotuv ofislari"
+                    ].map((item, index) => (
+                      <div className='flex items-center gap-1'>
+                        <img src={correcto} alt="" className='w-7' />
+                        <li key={index} className="text-lg sm:text-xl md:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                          {item}
+                        </li>
+                      </div>
+                    ))}
                   </ul>
 
-                  <ul className="list-disc pl-5 space-y-0.5">
-                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                      Bio-Tualetlar
-                    </li>
-                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                      Bankomatlar
-                    </li>
-                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                      Sartaroshxona
-                    </li>
-                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                      Modulli uylar
-                    </li>
-                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                      Kontainerdan uylar
-                    </li>
-                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                      Omborxonalar
-                    </li>
-                    <li className="text-lg sm:text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                      Va turli inshoatlar
-                    </li>
+                  <ul className="list-none pl-4 sm:pl-5 space-y-1 sm:space-y-2">
+                    {[
+                      "Bio-Tualetlar",
+                      "Bankomatlar",
+                      "Sartaroshxona",
+                      "Modulli uylar",
+                      "Kontainerdan uylar",
+                      "Omborxonalar",
+                      "Va turli inshoatlar"
+                    ].map((item, index) => (
+                      <div className='flex items-center gap-1'>
+                        <img src={correcto} alt="" className='w-7' />
+                      <li key={index} className="tracking-wide text-lg sm:text-xl md:text-2xl text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                        {item}
+                      </li>
+                      </div>
+                    ))}
                   </ul>
                 </div>
               </div>
             </InfoCard>
           </motion.div>
 
-          {/* Links to you tube, instagram, and telegram*/}
+          {/* Social Media Links */}
           <motion.div
             initial={variants.fadeInUp.initial}
             animate={variants.fadeInUp.animate}
             transition={variants.fadeInUp.transition}
-            className="px-2"
           >
             <InfoCard variant="gradient" className="max-w-4xl mx-auto">
-              <SectionHeader gradient>Bizni ijtimoiy tarmoqlarda kuzatib boring</SectionHeader>
-              <div className="space-y-6">
-                {/* <h1 className="text-lg md:text-xl font-medium text-gray-900 text-center">Bu you tube videomiz:</h1> */}
-                <div className="flex justify-center">
-                  <iframe
-                    width="600"
-                    height="315"
-                    src="https://www.youtube.com/embed/IpFn_XDHhU0?si=bvrFx8P8uWNxZTKO"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                    className="max-w-full w-[600px] h-[310px] md:w-[560px] md:h-[315px] lg:w-[700px] lg:h-[380px] rounded-xl"
-                  ></iframe>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <h1 className='flex items-center gap-1 text-xl font-medium'>Bu bizning ijtimoiy tarmoqlarimiz <ArrowDownIcon /></h1>
-                </div>
-                <div className="flex justify-center space-x-6">
+              <SectionHeader gradient>Ijtimoiy tarmoqlarimiz</SectionHeader>
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 md:gap-6">
                   <a
-                    href="https://www.instagram.com/kochma.dokon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
+                    href="https://www.instagram.com/kochma.dokon"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-white bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 px-4 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="flex items-center space-x-2 text-white bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto justify-center"
                   >
-                    <img src={instagram} alt="Instagram" className="w-6 h-6" />
-                    <span className="font-medium">Instagram</span>
+                    <img src={instagram} alt="Instagram" className="w-5 h-5 sm:w-6 sm:h-6" />
+                    <span className="font-medium text-lg sm:text-xl">Instagram</span>
                   </a>
                   <a
                     href="https://t.me/kochmadokon"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-white bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 px-4 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="flex items-center space-x-2 text-white bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto justify-center"
                   >
-                    <img src={telegram} alt="Telegram" className="w-6 h-6" />
-                    <span className="font-medium">Telegram</span>
+                    <img src={telegram} alt="Telegram" className="w-5 h-5 sm:w-6 sm:h-6" />
+                    <span className="font-medium text-lg sm:text-xl">Telegram</span>
                   </a>
                 </div>
               </div>
@@ -566,7 +485,7 @@ const FullContact: React.FC = () => {
                     transition={{ delay: 0.1 * index, ...variants.fadeInUp.transition }}
                   >
                     <Award className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-950 text-lg">{advantage}</span>
+                    <span className="text-gray-950 tracking-wide text-lg sm:text-xl md:text-2xl">{advantage}</span>
                   </motion.div>
                 ))}
               </div>
@@ -576,19 +495,19 @@ const FullContact: React.FC = () => {
           {/* Key Features */}
           <motion.div
             initial={variants.fadeInUp.initial}
-            animate={variants.fadeInUp.animate}  // <-- Animate immediately
+            animate={variants.fadeInUp.animate}
             transition={variants.fadeInUp.transition}
-            className='p-1 md:p-6 mb-6 hover:shadow-2xl transition-all duration-300'
+            className='hover:shadow-2xl transition-all duration-300'
           >
-            <SectionHeader className='text-gray-900 flex items-center justify-center gap-2'>
-              <img src={advantage} alt="advantage icon" className='w-10 h-10 md:w-14 md:h-14 mb-7' />
-              <div>
-                KO'CHMA DO'KON <br /> <span className="text-teal-700">AFZALLIKLARI</span>
+            <SectionHeader className='text-gray-900 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-2'>
+              <img src={advantage} alt="advantage icon" className='w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14' />
+              <div className="text-center sm:text-left">
+                Ushbu mahsulotimizning <br className="hidden sm:block" />
+                <span className="text-teal-700">AFZALLIKLARI</span>
               </div>
-
             </SectionHeader>
 
-            <div className="grid md:grid-cols-2 gap-2 md:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6 px-2 sm:px-4">
               {KEY_FEATURES.map((feature, index) => {
                 const IconComponent = feature.icon;
                 return (
@@ -601,15 +520,15 @@ const FullContact: React.FC = () => {
                     whileHover={prefersReducedMotion ? {} : { y: -5 }}
                   >
                     <InfoCard className="h-full">
-                      <div className="flex items-start space-x-4">
-                        <div className={`p-3 hidden lg:inline-block rounded-xl bg-gradient-to-r ${feature.color} shadow-lg`}>
-                          <IconComponent className="w-6 h-6 text-white" />
+                      <div className="flex items-start space-x-3 sm:space-x-4">
+                        <div className={`p-2 sm:p-3 hidden sm:block rounded-xl bg-gradient-to-r ${feature.color} shadow-lg flex-shrink-0`}>
+                          <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                         </div>
                         <div className="flex-1">
-                          <h4 className="text-2xl md:text-3xl font-bold text-slate-800 mb-3 group-hover:text-teal-600 transition-colors">
+                          <h4 className="text-xl sm:text-2xl md:text-2xl font-semibold lg:text-3xl text-slate-800 mb-2 sm:mb-3 group-hover:text-teal-600 transition-colors">
                             {feature.title}
                           </h4>
-                          <p className="text-slate-800 font-medium text-lg leading-relaxed">
+                          <p className="text-slate-800 tracking-wide text-lg sm:text-xl md:text-2xl font-sans leading-relaxed">
                             {feature.description}
                           </p>
                         </div>
@@ -619,8 +538,31 @@ const FullContact: React.FC = () => {
                 );
               })}
             </div>
-
           </motion.div>
+
+          {/* Comparison Section */}
+          <div className='bg-gradient-to-br from-blue-50 via-white to-blue-50/30 rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 shadow-sm border border-blue-100/50 hover:shadow-md transition-all duration-300'>
+            <div className="space-y-4 sm:space-y-6">
+              <div>
+                <h1 className='text-xl sm:text-2xl md:text-2xl font-semibold mb-3'>O'zingiz qursangiz qanday bo'ladi?</h1>
+                <div className="space-y-2 tracking-wide text-lg sm:text-xl md:text-2xl font-sans">
+                  <p>Siz materiallarni do'koningiz uchun metrlab olasiz va bu qimmatga tushadi.</p>
+                  <p>Siz bu do'konni ko'chadagi ustalarga tayyorlatasiz.</p>
+                  <p>Siz har doim ustalarning ustida turishingiz va ularni nazorat qilish uchun vaqtingizni ajratishingiz kerak bo'ladi.</p>
+                  <p>Siz do'konning har bir qismi uchun alohida usta topishingiz kerak bo'ladi.</p>
+                </div>
+              </div>
+              <div>
+                <h1 className='text-xl sm:text-xl md:text-2xl font-semibold mb-3'>Biz qursak qanday bo'ladi?</h1>
+                <div className="space-y-2 tracking-wide text-lg sm:text-xl md:text-2xl">
+                  <p>Biz materiallarni tonnalab optom narxga olamiz va bu arzona aylanadi.</p>
+                  <p>Bizda do'konlarni bu sohadagi ko'p yillik tajribaga ega mutahasislar yasaydi.</p>
+                  <p>Bizda esa bu ish qurilish sohasidagi malakali brigadirlar tomonidan nazoratga olinadi.</p>
+                  <p>Bizda hamma mutaxassislar fabrikada bo'lganligi tufayli do'koningiz tez fursatda tayyor bo'ladi.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* About Mobile Shops */}
           <motion.div
@@ -629,32 +571,6 @@ const FullContact: React.FC = () => {
             animate={variants.fadeInLeft.animate}  // <-- Animate immediately
             transition={variants.fadeInLeft.transition}
           >
-            <div className="space-y-6">
-              <motion.h2
-                className="text-3xl md:text-4xl text-center font-bold text-yellow-300 bg-clip-text "
-                whileHover={prefersReducedMotion ? {} : { scale: 1.02 }}
-              >
-                KO'CHMA DO'KON <br /> HAQIDA
-              </motion.h2>
-
-              <div className="space-y-4 text-black text-lg leading-relaxed">
-                {[
-                  "Metal konstruksiyadan qurilgan do'konlar bugungi kunda eng samarali va zamonaviy yechim hisoblanadi. Bunday inshootlar nafaqat mustahkam va ishonchli, balki iqtisodiy jihatdan ham foydali.",
-                  "Tez quriladi – qisqa muddat ichida do'koningizni ishga tushirishingiz mumkin. Arzonroq – an'anaviy g'isht yoki beton qurilishidan ancha tejamkor. Ko'chma imkoniyat – kerak bo'lsa, konstruksiyani boshqa joyga ko'chirib o'rnatish mumkin.",
-                  "Moslashuvchan dizayn – savdo do'konlari, ombor yoki xizmat ko'rsatish shoxobchalari uchun qulay. Uzoq muddatli xizmat – sifatli metall materiallar zangga qarshi maxsus himoya bilan qoplanadi."
-                ].map((text, index) => (
-                  <motion.p
-                    key={index}
-                    initial={variants.fadeInUp.initial}
-                    animate={variants.fadeInUp.animate}
-                    transition={{ delay: 0.2 * (index + 1), ...variants.fadeInUp.transition }}
-                  >
-                    {text}
-                  </motion.p>
-                ))}
-              </div>
-            </div>
-
             <motion.div
               initial={variants.fadeInRight.initial}
               animate={variants.fadeInRight.animate}
@@ -662,13 +578,13 @@ const FullContact: React.FC = () => {
             >
               <InfoCard className='bg-gradient-to-r from-blue-50 to-white rounded-lg p-4 md:p-6 mb-6 shadow-lg hover:shadow-2xl transition-all duration-300'>
                 <h3 className="text-2xl font-bold text-black mb-6 text-center">
-                  Bizning xizmatlarimiz
+                  Xizmatlarimiz
                 </h3>
                 <ul className="space-y-3">
                   {SERVICES.map((service, index) => (
                     <motion.li
                       key={index}
-                      className="flex items-start text-lg space-x-3 text-black"
+                      className="flex items-start text-lg tracking-wide space-x-3 text-black"
                       initial={variants.fadeInUp.initial}
                       animate={variants.fadeInUp.animate}
                       transition={{ delay: 0.1 * index, ...variants.fadeInUp.transition }}
@@ -682,63 +598,157 @@ const FullContact: React.FC = () => {
             </motion.div>
           </motion.div>
 
+
+          <div className="p-4 sm:p-6 md:p-8">
+            {/* YouTube Videos */}
+            <div className="mt-10 sm:mt-12 md:mt-16">
+              <h3 className="text-2xl sm:text-2xl md:text-3xl font-semibold text-gray-900 mb-6 sm:mb-8">
+                Bizning videolarimiz
+              </h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-6">
+                {[
+                  "B3RgSFGSYss",
+                  "88_USdQr204",
+                  "Vun_jMPowq4",
+                  "o4SCL-2VxVY",
+                  "WLf5A8SgXoQ",
+                  "PZh-W0EfBZQ"
+                ].map((videoId, index) => (
+                  <div key={index} className="aspect-[9/16] rounded-xl overflow-hidden bg-gray-100">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${videoId}`}
+                      title={`Video ${index + 1}`}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex justify-center">
+                <iframe
+                  width="600"
+                  height="315"
+                  src="https://www.youtube.com/embed/IpFn_XDHhU0?si=bvrFx8P8uWNxZTKO"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="max-w-full w-[600px] h-[310px] md:w-[560px] md:h-[315px] lg:w-[700px] lg:h-[380px] rounded-xl"
+                ></iframe>
+              </div>
+              <div className="text-center mt-6 sm:mt-8">
+                <a
+                  href="https://www.youtube.com/@Kochmadokon750"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold px-8 py-3 rounded-xl transition-colors text-base sm:text-lg"
+                >
+                  Batafsil ko'rish
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className='bg-gradient-to-br from-blue-50 via-white to-blue-50/30 rounded-xl p-6 md:p-8 mb-6 shadow-sm border border-blue-100/50 hover:shadow-md transition-all duration-300'>
+            {/* Sarlavha */}
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
+              Do'kon narxlari
+            </h2>
+
+            {/* Asosiy narx ma'lumoti */}
+            <div className="space-y-4 mb-8">
+              <div className="bg-white/60 rounded-lg p-4 md:p-5">
+                <p className="text-gray-700 text-lg leading-relaxed">
+                  Har bir kvadrat devor, tom va pataloklari <span className="font-semibold text-blue-600">35$</span> dan boshlab <span className="font-semibold text-blue-600">100$</span> gacha bo'lishi mumkin.
+                </p>
+              </div>
+
+              <div className="bg-white/60 rounded-lg p-4 md:p-5">
+                <p className="text-gray-700 text-lg leading-relaxed">
+                  Sababi bunda ishlatiladigan mahsulotlarning sifati va chidamliligiga qarab narxlar o'zgaradi. Agar poldan hisoblaydigan bo'lsak <span className="font-semibold text-blue-600">100$</span> dan <span className="font-semibold text-blue-600">400$</span> gacha.
+                </p>
+              </div>
+
+              <div className="bg-blue-50/50 rounded-lg p-4 md:p-5 border-l-4 border-blue-500">
+                <p className="text-gray-700 text-lg leading-relaxed">
+                  Do'konni dizayn, razmer va materiallariga qarab narxlar o'zgarishi mumkin. Yaxshi sifatli materialdan qimmatroq va jozibaliroq bo'ladi.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
           {/* Contact Section */}
           <motion.div
             initial={variants.fadeInUp.initial}
             animate={variants.fadeInUp.animate}
             transition={variants.fadeInUp.transition}
           >
-            <InfoCard className='bg-white rounded-lg p-4 md:p-6 mb-6 shadow-lg hover:shadow-2xl transition-all duration-300'>
-              <SectionHeader className='text-yellow-300 flex items-center justify-center gap-4 md:gap-6'>
-                <img src={contact} alt="contact icon" className='w-8 h-8 md:w-10 md:h-10' />
-                BIZ BILAN ALOQA
+            <InfoCard className='bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300'>
+              <SectionHeader className='text-yellow-600 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 md:gap-6'>
+                <img src={contact} alt="contact icon" className='w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10' />
+                MUROJAT UCHUN
               </SectionHeader>
 
-              <div className="gap-8">
-                <div className="space-y-6">
-                  <p className="text-black text-lg leading-relaxed">
-                    Biznes — birinchi qadamdan boshlanadi.
-                    Bizning metal konstruksiyadan qurilgan ko‘chma do‘konlarimiz bilan sizning birinchi qadamingiz mustahkam, ishonchli va hamyonbob bo'lishini taminlaymiz..
-                  </p>
-
-                  <div className="space-y-4">
-                    <motion.div>
-                      <div>
-                        <h2 className='text-2xl mb-4'>Murojat uchun</h2>
+              <div className="space-y-4 sm:space-y-6">
+                <div className="space-y-3 sm:space-y-4">
+                  <motion.div>
+                    <div className='flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4'>
+                      <div className='text-base sm:text-lg md:text-xl font-medium'>
+                        Call Center:
                       </div>
-
-                      <div className='flex gap-2 items-center bg-gray-50 px-3 py-5 mt-3 rounded-lg'>
-                        <Phone className='text-teal-600' />
-                        <a href='tel:+99878 777 75 57' className='text-sm md:text-base font-medium'>+998 78 777 75 57</a>
+                      <div className='flex gap-2 items-center bg-gray-50 px-3 sm:px-4 py-3 sm:py-4 rounded-lg w-full sm:w-auto'>
+                        <Phone className='text-teal-600 w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0' />
+                        <a href='tel:+998787777557' className='text-sm sm:text-base font-medium'>+998 78 777 75 57</a>
                       </div>
-
-                      <div className='flex gap-2 items-center bg-gray-50 px-3 py-5 mt-3 rounded-lg'>
-                        <Phone className='text-teal-600' />
-                        <a href="tel:+998771047557" className='text-sm md:text-base font-medium'>+998 77 104 75 57</a>
+                    </div>
+                    <div className='flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-3'>
+                      <div className='text-base sm:text-lg md:text-xl font-medium'>
+                        Shaxsiy:
                       </div>
-
-                      <div className="flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
-                        <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl text-center font-medium text-gray-800 mb-4">
-                          Savollaringizni telegram lichkada qoldiring va ko'chma do'kon siz bilan bog'lanadi.
-                        </h3>
-                        <a
-                          href="https://t.me/kochma_dokon_adminstratsiya"
-                          className="inline-block bg-teal-600 text-white font-semibold py-2 px-4 sm:px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm sm:text-base"
-                        >
-                          Telegram
-                        </a>
+                      <div className='flex gap-2 items-center bg-gray-50 px-3 sm:px-4 py-3 sm:py-4 rounded-lg w-full sm:w-auto'>
+                        <Phone className='text-teal-600 w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0' />
+                        <a href="tel:+998771047557" className='text-sm sm:text-base font-medium'>+998 77 104 75 57</a>
                       </div>
+                    </div>
 
-                      <div className='flex gap-2 mt-4 items-center bg-gray-50 px-3 py-5 rounded-lg'>
-                        <MapPin className='text-teal-600' />
-                        <h3 className='text-sm md:text-base font-medium'>Toshkent shahar, Yangihayot tumani <br />
-                          Metro: Turon bekat <br />
-                          Index bozor chorraxasi</h3>
-                      </div>
-                    </motion.div>
-                  </div>
+                    <div className="flex flex-col items-center justify-center p-3 sm:p-4 md:p-6 lg:p-8 mt-4">
+                      <h3 className="text-lg sm:text-lg md:text-xl lg:text-2xl text-center font-medium text-gray-800 mb-3 sm:mb-4">
+                        Telegramdan murojat uchun
+                      </h3>
+                      <a
+                        href="https://t.me/kochma_dokon_adminstratsiya"
+                        className="inline-block bg-teal-600 text-white font-semibold py-2 sm:py-2.5 md:py-3 px-8 sm:px-10 md:px-12 rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm sm:text-base md:text-lg w-full sm:w-auto text-center"
+                      >
+                        Telegram
+                      </a>
+                    </div>
+
+                    <div className='flex gap-2 sm:gap-3 mt-3 sm:mt-4 items-start bg-gray-50 px-3 sm:px-4 py-3 sm:py-4 md:py-5 rounded-lg'>
+                      <MapPin className='text-teal-600 w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5' />
+                      <h3 className='text-sm sm:text-base md:text-lg font-medium'>
+                        Toshkent shahar, Yangihayot tumani <br />
+                        Metro: Turon bekat <br />
+                        Index bozor chorraxasi
+                      </h3>
+                    </div>
+                    <div className="rounded-lg text-center bg-emerald-600 px-3 sm:px-4 py-3 sm:py-4 mt-3 sm:mt-4 hover:bg-emerald-700 transition-colors">
+                      <a
+                        href="https://maps.app.goo.gl/abZn34TbaSjzdd9c6"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-base sm:text-lg md:text-xl text-center font-semibold flex gap-1 sm:gap-2 items-center justify-center text-yellow-300"
+                      >
+                        <MapPin className="w-5 h-5 sm:w-6 sm:h-6" />
+                        Lokatsiyamiz
+                      </a>
+                    </div>
+                  </motion.div>
                 </div>
-
               </div>
             </InfoCard>
           </motion.div>
@@ -759,13 +769,13 @@ const FullContact: React.FC = () => {
                 O'zbekistondagi eng ishonchli ko'chma do'konlar fabrikasi
               </p>
               <p className="text-sm text-slate-500">
-                © 2025 Kontainer City. Barcha huquqlar himoyalangan.
+                © 2025 Ko'chma Do'kon. Barcha huquqlar himoyalangan.
               </p>
             </div>
           </motion.footer>
         </section>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 
